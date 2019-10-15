@@ -1,0 +1,24 @@
+STEPS TO RUN PET QC
+
+Prerequisites: FSL
+
+export FSLDIR=/usr/local/fsl-5.0.10;
+. ${FSLDIR}/etc/fslconf/fsl.sh;
+export PATH=${FSLDIR}/bin:${PATH}
+
+STEP 0
+    Specify subjects in /qualitycontrol/qcsubjects.txt (as column)
+
+STEP 1
+    Check freesurfer to T1 registration
+    Run: ./1_t1_aparc.sh petproc.config
+
+STEP 2
+    Check reference region registration to PET image and T1 in PET space
+    Run: ./2_pet_ref.sh
+
+STEP 3
+    Check PET ROI registration
+    Run: ./3_petroi.sh
+
+
